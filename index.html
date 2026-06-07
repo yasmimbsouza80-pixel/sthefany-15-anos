@@ -1,5 +1,7 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +9,7 @@
 <title>Sthefany XV Anos</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -16,6 +19,7 @@ box-sizing:border-box;
 body{
 background:#000;
 overflow:hidden;
+font-family:Arial,sans-serif;
 }
 
 .tela{
@@ -24,21 +28,25 @@ top:0;
 left:0;
 width:100%;
 height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#000;
 transition:1s;
 }
 
+.tela img{
+max-width:100%;
+max-height:100%;
+object-fit:contain;
+}
+
 #capa{
-background:url("Capa.png") center center;
-background-size:cover;
-cursor:pointer;
 z-index:2;
+cursor:pointer;
 }
 
 #convite{
-background:url("convite.png") center center;
-background-size:cover;
-background-repeat:no-repeat;
-background-color:#000;
 opacity:0;
 pointer-events:none;
 z-index:1;
@@ -51,32 +59,55 @@ pointer-events:auto;
 
 #capa.sumir{
 opacity:0;
+pointer-events:none;
 }
+
+/* BOTÕES INVISÍVEIS */
 
 .botao{
 position:absolute;
-left:20%;
-width:60%;
+left:22%;
+width:56%;
 height:7%;
+z-index:10;
 }
 
-/* Confirmar Presença */
+/* Confirmar presença */
 .confirmar{
-top:78%;
+top:79%;
 }
 
-/* Ver Localização */
+/* Localização */
+.localizacao{
+top:88%;
+}
+
+/* Ajustes celular */
+
+@media (max-width:768px){
+
+.confirmar{
+top:80%;
+}
+
 .localizacao{
 top:89%;
 }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<div id="capa" class="tela"></div>
+<div id="capa" class="tela">
+<img src="Capa.png" alt="Capa">
+</div>
 
 <div id="convite" class="tela">
+
+<img src="convite.png" alt="Convite">
 
 <a
 class="botao confirmar"
@@ -98,7 +129,7 @@ const capa = document.getElementById("capa");
 const convite = document.getElementById("convite");
 
 capa.addEventListener("click", () => {
-  
+
 capa.classList.add("sumir");
 
 setTimeout(() => {
@@ -111,3 +142,4 @@ convite.classList.add("ativo");
 
 </body>
 </html>
+```
