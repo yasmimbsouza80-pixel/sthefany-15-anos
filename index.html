@@ -4,101 +4,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sthefany XV Anos</title>
 
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  background:#000;
-  overflow:hidden;
+background:#000;
+font-family:Arial,sans-serif;
+overflow:hidden;
 }
 
 .tela{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:#000;
+width:100vw;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#000;
 }
 
 #capa{
-  cursor:pointer;
-  z-index:2;
+cursor:pointer;
+position:fixed;
+top:0;
+left:0;
+z-index:10;
 }
 
 #capa img,
 #convite img{
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
+max-width:100%;
+max-height:100%;
+object-fit:contain;
+display:block;
 }
 
 #convite{
-  display:none;
-  z-index:1;
+display:none;
+position:relative;
+width:100vw;
+height:100vh;
+justify-content:center;
+align-items:center;
 }
 
 #convite.ativo{
-  display:flex;
+display:flex;
 }
 
 .convite-box{
-  position:relative;
+position:relative;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 }
+
+.convite-box img{
+height:100vh;
+width:auto;
+}
+
+/* BOTÕES */
 
 .botao{
-  position:absolute;
-  left:18%;
-  width:64%;
-  height:6%;
-  z-index:10;
+position:absolute;
+left:18%;
+width:64%;
+z-index:20;
+cursor:pointer;
 }
 
-/* Confirmar presença */
+/* Confirmar Presença */
 .confirmar{
-  top:80%;
+top:80.8%;
+height:5.5%;
 }
 
-/* Localização */
+/* Ver Localização */
 .localizacao{
-  top:88%;
+top:89%;
+height:5.5%;
 }
+
+@media (max-width:768px){
+
+.convite-box img{
+width:100vw;
+height:auto;
+}
+
+.confirmar{
+top:80.5%;
+}
+
+.localizacao{
+top:88.5%;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <div id="capa" class="tela">
-  <img src="Capa.png" alt="Capa">
+<img src="Capa.png" alt="Capa">
 </div>
 
-<div id="convite" class="tela">
-  <div class="convite-box">
+<div id="convite">
 
-    <img src="convite2.png" alt="Convite Sthefany XV Anos">
+<div class="convite-box">
 
-    <a
-      class="botao confirmar"
-      href="https://meu.temfestinha.com/sthefany-batista12-2026"
-      target="_blank">
-    </a>
+<img src="convite2.jpg" alt="Convite">
 
-    <a
-      class="botao localizacao"
-      href="https://share.google/YCW9TYirK7uOsU898"
-      target="_blank">
-    </a>
+<a
+class="botao confirmar"
+href="https://meu.temfestinha.com/sthefany-batista12-2026"
+target="_blank">
+</a>
 
-  </div>
+<a
+class="botao localizacao"
+href="https://share.google/YCW9TYirK7uOsU898"
+target="_blank">
+</a>
+
+</div>
+
 </div>
 
 <script>
@@ -106,9 +147,9 @@ body{
 const capa = document.getElementById("capa");
 const convite = document.getElementById("convite");
 
-capa.addEventListener("click", function() {
-  capa.style.display = "none";
-  convite.classList.add("ativo");
+capa.addEventListener("click", () => {
+    capa.style.display = "none";
+    convite.classList.add("ativo");
 });
 
 </script>
