@@ -1,159 +1,114 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Sthefany XV Anos</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body{
-background:#000;
-font-family:Arial,sans-serif;
-overflow:hidden;
-}
-
-.tela{
-width:100vw;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#000;
+html, body{
+  background:#000;
+  font-family:Arial, sans-serif;
 }
 
 #capa{
-cursor:pointer;
-position:fixed;
-top:0;
-left:0;
-z-index:10;
+  width:100vw;
+  height:100vh;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
 }
 
-#capa img,
-#convite img{
-max-width:100%;
-max-height:100%;
-object-fit:contain;
-display:block;
+#capa img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
 }
 
 #convite{
-display:none;
-position:relative;
-width:100vw;
-height:100vh;
-justify-content:center;
-align-items:center;
+  display:none;
+  background:#000;
+  min-height:100vh;
+  justify-content:center;
+  align-items:flex-start;
 }
 
 #convite.ativo{
-display:flex;
+  display:flex;
 }
 
 .convite-box{
-position:relative;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
+  position:relative;
+  width:100%;
+  max-width:520px;
 }
 
 .convite-box img{
-height:100vh;
-width:auto;
+  width:100%;
+  display:block;
 }
 
-/* BOTÕES */
-
+/* BOTÕES INVISÍVEIS */
 .botao{
-position:absolute;
-left:18%;
-width:64%;
-z-index:20;
-cursor:pointer;
+  position:absolute;
+  left:20%;
+  width:60%;
+  height:5.5%;
+  z-index:10;
 }
 
-/* Confirmar Presença */
+/* Confirmar presença */
 .confirmar{
-top:80.8%;
-height:5.5%;
+  top:80.5%;
 }
 
-/* Ver Localização */
+/* Ver localização */
 .localizacao{
-top:89%;
-height:5.5%;
+  top:88.3%;
 }
-
-@media (max-width:768px){
-
-.convite-box img{
-width:100vw;
-height:auto;
-}
-
-.confirmar{
-top:80.5%;
-}
-
-.localizacao{
-top:88.5%;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<div id="capa" class="tela">
-<img src="Capa.png" alt="Capa">
-</div>
+<section id="capa">
+  <img src="Capa.png" alt="Capa do convite">
+</section>
 
-<div id="convite">
+<section id="convite">
+  <div class="convite-box">
 
-<div class="convite-box">
+    <img src="convite4.png" alt="Convite Sthefany XV Anos">
 
-<img src="convite4.png" alt="Convite">
+    <a class="botao confirmar"
+       href="https://meu.temfestinha.com/sthefany-batista12-2026"
+       target="_blank"></a>
 
-<a
-class="botao confirmar"
-href="https://meu.temfestinha.com/sthefany-batista12-2026"
-target="_blank">
-</a>
+    <a class="botao localizacao"
+       href="https://share.google/YCW9TYirK7uOsU898"
+       target="_blank"></a>
 
-<a
-class="botao localizacao"
-href="https://share.google/YCW9TYirK7uOsU898"
-target="_blank">
-</a>
-
-</div>
-
-</div>
+  </div>
+</section>
 
 <script>
-
 const capa = document.getElementById("capa");
 const convite = document.getElementById("convite");
 
 capa.addEventListener("click", () => {
-    capa.style.display = "none";
-    convite.classList.add("ativo");
+  capa.style.display = "none";
+  convite.classList.add("ativo");
+  window.scrollTo(0, 0);
 });
-
 </script>
 
 </body>
 </html>
-```
